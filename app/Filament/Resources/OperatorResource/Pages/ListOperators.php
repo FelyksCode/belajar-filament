@@ -19,12 +19,12 @@ class ListOperators extends ListRecords
 
     protected static ?string $breadcrumb = 'List';
 
-
-
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->icon('heroicon-s-plus')
+                ->label('Add Operator'),
         ];
     }
 }
