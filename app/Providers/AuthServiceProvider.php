@@ -3,12 +3,18 @@
 namespace App\Providers;
 
 use App\Models\User;
+use App\Policies\UserPolicy;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
+    protected $policies = [
+        User::class => UserPolicy::class, // Register UserPolicy for the User model
+    ];
+
     /**
      * Register services.
      */
@@ -22,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Gate::policy(User::class, UserPolicy::class);
+
         Auth::provider('plain-text', function ($app, array $config) {
             return new class implements UserProvider {
                 public function retrieveById($identifier)
