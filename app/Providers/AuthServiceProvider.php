@@ -52,7 +52,7 @@ class AuthServiceProvider extends ServiceProvider
 
                 public function retrieveByCredentials(array $credentials)
                 {
-                    return User::where('email', $credentials['email'])->first();
+                    return User::where('username', $credentials['username'])->first();
                 }
 
                 public function validateCredentials(\Illuminate\Contracts\Auth\Authenticatable $user, array $credentials)
