@@ -42,7 +42,12 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
+    }
+
+    // Disable password hashing
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = $value; // Store as plain text (⚠️ NOT SECURE)
     }
 }
