@@ -22,8 +22,6 @@ class OperatorResource extends Resource
 
     protected static ?string $navigationLabel = 'Operators';
 
-
-
     public static function form(Form $form): Form
     {
         return $form
