@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'name',
         'email',
+        'id_employee',
         'role',
         'password',
     ];
@@ -50,6 +51,6 @@ class User extends Authenticatable
     // Disable password hashing
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = $value; // Store as plain text (⚠️ NOT SECURE)
+        $this->attributes['password'] = $value; // Store as plain text
     }
 }

@@ -17,6 +17,9 @@ class ListAdmins extends ListRecords
     }
 
 
+    protected static ?string $breadcrumb = 'List';
+
+
     protected function getHeaderActions(): array
     {
         return [

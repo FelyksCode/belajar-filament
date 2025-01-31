@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Test Dev',
                 'username' => 'dev',
+                'id_employee' => 'D001',
                 'email' => 'dev@dev.com',
                 'password' => env("DEV_PASSWORD"),
                 'role' => 'developer',
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Test Admin',
                 'username' => 'admin',
+                'id_employee' => 'A001',
                 'email' => 'admin@admin.com',
                 'password' => env("ADMIN_PASSWORD"),
                 'role' => 'admin',
@@ -31,6 +33,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Test Op',
                 'username' => 'op',
+                'id_employee' => 'O001',
                 'email' => 'op@op.com',
                 'password' => env("OPERATOR_PASSWORD"),
                 'role' => 'operator',

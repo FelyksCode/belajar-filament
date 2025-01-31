@@ -17,6 +17,10 @@ class ListOperators extends ListRecords
     }
 
 
+    protected static ?string $breadcrumb = 'List';
+
+
+
     protected function getHeaderActions(): array
     {
         return [

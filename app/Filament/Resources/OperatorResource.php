@@ -22,11 +22,26 @@ class OperatorResource extends Resource
 
     protected static ?string $navigationLabel = 'Operators';
 
+    protected static ?string $recordTitleAttribute = 'username';
+
+    protected static ?string $breadcrumb = 'Operators';
+
     public static function form(Form $form): Form
     {
+        $isCreate = $form->getOperation() === "create";
+
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\TextInput::make('username')->required(),
+                Forms\Components\TextInput::make('id_employee')->label("ID Employee")->required(),
+                Forms\Components\TextInput::make('password')
+                    ->password()  // This ensures the input is treated as a password field
+                    ->helperText($isCreate
+                        ? false
+                        : 'Leave empty to keep the current password.')
+                    ->required($isCreate),
+                Forms\Components\Hidden::make('role')->default('operator')
             ]);
     }
 
