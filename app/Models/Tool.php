@@ -4,13 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Tool extends Model
 {
     protected $fillable = [
-        "name",
-        "description",
-        "id_barcode",
-        "image",
+        'name',
     ];
 
     public function parameters()
