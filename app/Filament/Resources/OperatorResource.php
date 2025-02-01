@@ -65,7 +65,8 @@ class OperatorResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->poll('5s');
     }
 
     public static function getRelations(): array
