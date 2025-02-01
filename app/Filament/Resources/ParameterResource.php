@@ -60,7 +60,7 @@ class ParameterResource extends Resource
                                     ->label('Total Parameters')
                                     ->content(fn(callable $get) => count($get('parameters') ?? []))
                                     ->extraAttributes([
-                                        'class' => 'block w-full px-3 py-2 border border-gray-300 bg-gray-100 text-gray-700 rounded-md shadow-sm'
+                                        'class' => 'block w-full px-3 py-1.5 border border-gray-300 bg-gray-100 text-gray-700 rounded-md shadow-sm'
                                     ]),
 
                                 Forms\Components\Hidden::make('description')
@@ -186,7 +186,7 @@ class ParameterResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
-            ->poll('5s');
+            ->poll('10s');
     }
 
 
